@@ -18,6 +18,9 @@ $(TARGET): parser.tab.c lex.yy.c
 
 test: $(TARGET)
 	@printf "int x;\nx = 10 + 5 * 2;\nprint(x);\n" | ./$(TARGET) | grep -qx "20"
+	@! printf "x = 1;\n" | ./$(TARGET) >/dev/null 2>&1
+	@! printf "int x;\nprint(x);\n" | ./$(TARGET) >/dev/null 2>&1
+	@! printf "int x;\nx = 5 / (2 - 2);\n" | ./$(TARGET) >/dev/null 2>&1
 	@echo "Targeted test passed"
 
 clean:

@@ -8,6 +8,7 @@ A minimal mini-compiler/interpreter built with **Flex** and **Bison**.
 - Assignment: `x = 2 + 3 * 4;`
 - Print expression: `print(x);`
 - Arithmetic: `+`, `-`, `*`, `/`, parentheses, unary minus
+- Line comments: `// comment`
 
 ## Build
 

@@ -2,19 +2,10 @@
 
 %{
 #include "parser.tab.h"
+#include "common.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-static char *xstrdup(const char *s) {
-    size_t len = strlen(s) + 1;
-    char *copy = (char *)malloc(len);
-    if (copy == NULL) {
-        return NULL;
-    }
-    memcpy(copy, s, len);
-    return copy;
-}
 %}
 
 %%

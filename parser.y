@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "common.h"
 
 int yylex(void);
 void yyerror(const char *s);
@@ -16,16 +17,6 @@ typedef struct {
 
 static Symbol symbols[MAX_SYMBOLS];
 static int symbol_count = 0;
-
-static char *xstrdup(const char *s) {
-    size_t len = strlen(s) + 1;
-    char *copy = (char *)malloc(len);
-    if (copy == NULL) {
-        return NULL;
-    }
-    memcpy(copy, s, len);
-    return copy;
-}
 
 static int find_symbol(const char *name) {
     for (int i = 0; i < symbol_count; i++) {
