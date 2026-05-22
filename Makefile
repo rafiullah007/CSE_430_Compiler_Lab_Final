@@ -21,7 +21,7 @@ test: $(TARGET)
 	@! printf "x = 1;\n" | ./$(TARGET) >/dev/null 2>&1
 	@! printf "int x;\nprint(x);\n" | ./$(TARGET) >/dev/null 2>&1
 	@! printf "int x;\nx = 5 / (2 - 2);\n" | ./$(TARGET) >/dev/null 2>&1
-	@echo "Targeted test passed"
+	@echo "All targeted tests passed"
 
 clean:
 	rm -f $(TARGET) parser.tab.c parser.tab.h lex.yy.c

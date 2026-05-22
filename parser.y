@@ -40,7 +40,7 @@ static void declare_variable(const char *name) {
 
     symbols[symbol_count].name = xstrdup(name);
     if (symbols[symbol_count].name == NULL) {
-        fprintf(stderr, "Error: out of memory.\n");
+        fprintf(stderr, "Error: memory allocation failed while declaring '%s'.\n", name);
         exit(EXIT_FAILURE);
     }
 
